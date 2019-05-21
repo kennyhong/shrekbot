@@ -18,6 +18,11 @@ setInterval(function () {
     client.channels.find(channel => {
         if (channel.id === "476224270318567426"){
             channel.send("I'M AWAKE! I'M AWAKE! (To prevent bot from sleeping)");
+            channel.messages.find(message => {
+                if (message.author.id === "498033064631599114") {
+                    message.delete();
+                }
+            });
         }
-    })
+    });
 }, 20 * 60 * 1000);
