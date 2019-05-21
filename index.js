@@ -13,3 +13,7 @@ fs.readdir('./events/', (error, files) => {
 });
 
 client.login(process.env.BOT_TOKEN);
+
+setInterval(function () {
+    
+});
