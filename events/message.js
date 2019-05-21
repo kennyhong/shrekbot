@@ -113,4 +113,11 @@ module.exports = (client, message) => {
             message.delete();
         }
     }
+
+    if (message.content.toLowerCase().startsWith("!purgeshrekbot2k")) {
+        if(message.author.id !== shrekID && mods.has(message.author.id)) {
+            message.channel.fetchMessages()
+            .then(messages => messages.filter(m => m.author.id === shrekID).forEach(message => message.delete()));
+        }
+    }
 }
