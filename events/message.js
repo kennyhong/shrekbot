@@ -1,7 +1,7 @@
 module.exports = (client, message) => {
     const shrekID = client.user.id;
 
-    const mods = new Set(["176099227020165120", "131949489438064641", "396955938159984641", "173638066915901440", "123565612785074176"]);
+    const mods = new Set(["176099227020165120", "131949489438064641", "396955938159984641", "173638066915901440", "123565612785074176", "337030050824060931"]);
     if (message.content.toLowerCase().includes("cream")) {
         message.channel.send(`<@337030050824060931> - This may be of interest to you!`);
     }
@@ -110,6 +110,13 @@ module.exports = (client, message) => {
     if (message.content.toLowerCase().startsWith("!encounterdnd")) {
         if(message.author.id !== shrekID && mods.has(message.author.id)) {
             message.channel.send("@everyone Learn DnD with our Guild Leader Spec! Dice giveaways available! https://www.twitch.tv/encounterroleplay");
+            message.delete();
+        }
+    }
+
+    if (message.content.toLowerCase().startsWith("!hello")) {
+        if(message.author.id !== shrekID && mods.has(message.author.id)) {
+            message.channel.send("Oh Hello There! http://paperlief.com/images/shrek-wallpaper-2.jpg");
             message.delete();
         }
     }
