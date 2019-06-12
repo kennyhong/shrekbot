@@ -2,7 +2,7 @@ module.exports = (client, message) => {
     const shrekID = client.user.id;
 
     const mods = new Set(["176099227020165120", "131949489438064641", "396955938159984641", "173638066915901440", "123565612785074176", "337030050824060931"]);
-    if (message.content.toLowerCase().includes("cream")) {
+    if (message.content.toLowerCase().match(/ cream /g)) {
         message.channel.send(`<@337030050824060931> - This may be of interest to you!`);
     }
 
