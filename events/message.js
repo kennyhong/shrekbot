@@ -10,7 +10,7 @@ module.exports = (client, message) => {
         message.channel.send(`Huh? WHAT ARE YOU DOING IN MY SWAMP?!`);
     }
 
-    if (message.content.toLowerCase().search(/ forgive /g)) {
+    if (message.content.toLowerCase().match(/ forgive /g)) {
         if(message.author.id !== shrekID) {
             message.channel.send("Oh yeah, you're right, " + `<@${message.author.id}>` + ". I forgive you... For stabbing me in the back!");
         }
