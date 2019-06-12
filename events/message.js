@@ -2,15 +2,15 @@ module.exports = (client, message) => {
     const shrekID = client.user.id;
 
     const mods = new Set(["176099227020165120", "131949489438064641", "396955938159984641", "173638066915901440", "123565612785074176", "337030050824060931"]);
-    if (message.content.toLowerCase().search("cream")) {
+    if (message.content.toLowerCase().include("cream")) {
         message.channel.send(`<@337030050824060931> - This may be of interest to you!`);
     }
 
-    if (message.content.toLowerCase().search("donkey")) {
+    if (message.content.toLowerCase().include("donkey")) {
         message.channel.send(`Huh? WHAT ARE YOU DOING IN MY SWAMP?!`);
     }
 
-    if (message.content.toLowerCase().search("forgive")) {
+    if (message.content.toLowerCase().include("forgive")) {
         if(message.author.id !== shrekID) {
             message.channel.send("Oh yeah, you're right, " + `<@${message.author.id}>` + ". I forgive you... For stabbing me in the back!");
         }
@@ -30,7 +30,7 @@ module.exports = (client, message) => {
         }
     }
 
-    if (message.content.toLowerCase().search("baka")) {
+    if (message.content.toLowerCase().include("baka")) {
         if(message.author.id !== shrekID) {
             const specbaka = client.emojis.find(emoji => emoji.name === 'SpecBaka');
             message.channel.send(`${specbaka}`);
@@ -64,7 +64,7 @@ module.exports = (client, message) => {
         }
     }
 
-    if (message.content.toLowerCase().search("layers")) {
+    if (message.content.toLowerCase().include("layers")) {
         if(message.author.id !== shrekID) {
             message.channel.send(`Onions have layers. Ogres have layers.`);
         }
