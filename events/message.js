@@ -6,7 +6,7 @@ module.exports = (client, message) => {
         message.channel.send(`<@337030050824060931> - This may be of interest to you!`);
     }
 
-    if (message.content.toLowerCase().includes("donkey")) {
+    if (message.content.toLowerCase().match(/ donkey /g)) {
         message.channel.send(`Huh? WHAT ARE YOU DOING IN MY SWAMP?!`);
     }
 
@@ -30,7 +30,7 @@ module.exports = (client, message) => {
         }
     }
 
-    if (message.content.toLowerCase().includes("baka")) {
+    if (message.content.toLowerCase().match(/ baka /g)) {
         if(message.author.id !== shrekID) {
             const specbaka = client.emojis.find(emoji => emoji.name === 'SpecBaka');
             message.channel.send(`${specbaka}`);
@@ -64,7 +64,7 @@ module.exports = (client, message) => {
         }
     }
 
-    if (message.content.toLowerCase().includes("layers")) {
+    if (message.content.toLowerCase().match(/ layers /g)) {
         if(message.author.id !== shrekID) {
             message.channel.send(`Onions have layers. Ogres have layers.`);
         }
