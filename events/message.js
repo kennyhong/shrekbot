@@ -10,13 +10,13 @@ module.exports = (client, message) => {
         message.channel.send(`Huh? WHAT ARE YOU DOING IN MY SWAMP?!`);
     }
 
-    if (message.content.toLowerCase().includes("forgive")) {
+    if (message.content.toLowerCase().search(/ forgive /g)) {
         if(message.author.id !== shrekID) {
             message.channel.send("Oh yeah, you're right, " + `<@${message.author.id}>` + ". I forgive you... For stabbing me in the back!");
         }
     }
 
-    if (message.content.toLowerCase().startsWith("tea")) {
+    if (message.content.toLowerCase().startsWith("!tea")) {
         if(message.author.id !== shrekID) {
             const sip = client.emojis.find(emoji => emoji.name === 'SpecSip');
             message.channel.send(`${sip}`);
