@@ -127,4 +127,10 @@ module.exports = (client, message) => {
             .then(messages => messages.filter(m => m.author.id === shrekID).forEach(message => message.delete()));
         }
     }
+    
+    if (message.content.toLowerCase().startsWith("!developer")) {
+        if(message.author.id !== shrekID && mods.has(message.author.id)) {
+            message.channel.send("You can check out how I work here: https://github.com/kennyhong/shrekbot");
+        }
+    }
 }
