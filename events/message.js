@@ -5,7 +5,7 @@ module.exports = (client, message) => {
     const slurs = ["nigger", "nigga", "niglet", "nignog", "faggot", "fag", "chink", "n*gg"];
 
     if(message.author.id !== shrekID) {
-        for(var i = 0; i < slurs.size(); i++) {
+        for(var i = 0; i < slurs.length; i++) {
             if(message.content.toLowerCase().contains(slurs[i])) {
                 var channel = message.channel;
                 var author = message.author.id;
