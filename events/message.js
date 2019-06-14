@@ -2,6 +2,18 @@ module.exports = (client, message) => {
     const shrekID = client.user.id;
 
     const mods = new Set(["176099227020165120", "131949489438064641", "396955938159984641", "173638066915901440", "123565612785074176", "337030050824060931"]);
+    const slurs = new Set(["nigger", "nigga", "niglet", "nignog", "faggot", "fag", "chink", "n*gg"]);
+
+    for(var i = 0; i < slurs.size(); i++) {
+        if(message.content.toLowerCase().contains(slur[i])) {
+            var channel = message.channel;
+            var author = message.author.id;
+            message.delete();
+            channel.send(`<@${message.author.id}>`+ " - yeet");
+            break;
+        }
+    }
+
     if (message.content.toLowerCase().match(/ cream /g)) {
         message.channel.send(`<@337030050824060931> - This may be of interest to you!`);
     }
