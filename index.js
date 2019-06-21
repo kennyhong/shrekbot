@@ -13,15 +13,3 @@ fs.readdir('./events/', (error, files) => {
 });
 
 client.login(process.env.BOT_TOKEN);
-
-// setInterval(function () {
-//     client.channels.find(channel => {
-//         if (channel.id === "476224270318567426"){
-//             channel.messages.find(message => {
-//                 if (message.author.id === "498033064631599114") {
-//                     message.delete();
-//                 }
-//             });
-//         }
-//     });
-// }, 20 * 60 * 1000);
