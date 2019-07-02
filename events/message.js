@@ -154,4 +154,11 @@ module.exports = (client, message) => {
             message.channel.send("You can check out how I work here: https://github.com/kennyhong/shrekbot");
         }
     }
-}
+    
+    if (message.content.toLowerCase().startsWith("!live")) {
+        if(message.author.id !== shrekID && mods.has(message.author.id)) {
+            message.channel.send("@everyone THE PRINCESS IS LIVE! EVERYONE GATHER ROUND! [!gfuel, !comms] https://www.twitch.tv/spectissa");
+            message.delete();
+        }
+    }
+} //end
