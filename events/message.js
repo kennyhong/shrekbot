@@ -91,7 +91,7 @@ module.exports = (client, message) => {
         }
     }
     
-    if (message.content.toLowerCase().match(/Shreknet/g)) {
+    if (message.content.toLowerCase().contains("shreknet")) {
         if(message.author.id !== shrekID && mods.has(message.author.id)) {
             message.channel.send(`Shreknet does exist Kaidaer :SpecStab:`);
         }
