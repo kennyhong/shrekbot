@@ -91,9 +91,9 @@ module.exports = (client, message) => {
         }
     }
     
-    if (message.content.toLowerCase().startsWith("!drinkthat")) {
+    if (message.content.toLowerCase().startsWith("!praiseme")) {
         if(message.author.id !== shrekID && mods.has(message.author.id)) {
-            message.channel.send("Yes Kaidaer, drink that energy drink...");
+            message.channel.send("Also thank you @jlrogers56 for praising me, good luck shall be bestowed upon you tomorrow.");
             message.delete();
         }
     }
