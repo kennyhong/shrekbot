@@ -91,9 +91,10 @@ module.exports = (client, message) => {
         }
     }
     
-    if (message.content.toLowerCase().contains("shreknet")) {
+    if (message.content.toLowerCase().match("shreknet")) {
         if(message.author.id !== shrekID && mods.has(message.author.id)) {
-            message.channel.send(`Shreknet does exist Kaidaer :SpecStab:`);
+            const specstab = client.emojis.find(emoji => emoji.name === 'SpecStab');
+            message.channel.send(`Shreknet does exist Kaidaer ${specstab}`);
         }
     }
 
