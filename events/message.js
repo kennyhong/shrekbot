@@ -90,6 +90,12 @@ module.exports = (client, message) => {
             message.channel.send(`Onions have layers. Ogres have layers.`);
         }
     }
+    
+    if (message.content.toLowerCase().match(/I think Shreknet does exist.../g)) {
+        if(message.author.id !== shrekID && mods.has(message.author.id)) {
+            message.channel.send(`Shreknet does exist Kaidaer :SpecStab:`);
+        }
+    }
 
     if (message.content.toLowerCase().startsWith("!warning")) {
         if(message.author.id !== shrekID && mods.has(message.author.id)) {
