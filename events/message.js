@@ -24,9 +24,10 @@ module.exports = (client, message) => {
         message.channel.send(`Huh? WHAT ARE YOU DOING IN MY SWAMP?!`);
     }
     
-    if (message.content.toLowerCase().includes("Shrekbot approves this message")) {
+    if (message.content.toLowerCase().startsWith("!approve")) {
         if(message.author.id !== shrekID && mods.has(message.author.id)) {
             message.channel.send("https://www.pngkey.com/png/full/14-142920_shrek-shrek-with-thumbs-up.png");
+            message.delete();
         }
     }
 
