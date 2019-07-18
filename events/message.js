@@ -23,6 +23,12 @@ module.exports = (client, message) => {
     if (message.content.toLowerCase().match(/ donkey /g)) {
         message.channel.send(`Huh? WHAT ARE YOU DOING IN MY SWAMP?!`);
     }
+    
+    if (message.content.toLowerCase().match(/Shrekbot approves this message/g)) {
+        if(message.author.id !== shrekID && mods.has(message.author.id)) {
+            message.channel.send("https://www.pngkey.com/png/full/14-142920_shrek-shrek-with-thumbs-up.png");
+        }
+    }
 
     if (message.content.toLowerCase().match(/ forgive /g)) {
         if(message.author.id !== shrekID) {
