@@ -91,6 +91,25 @@ module.exports = (client, message) => {
             .catch(error => message.reply('Sorry, an error occured.'));
         }
     }
+    
+        if(message.content.toLowerCase().startsWith("!kill")) {
+        if(message.author.id !== shrekID && mods.has(message.author.id)) {
+            const member = message.mentions.members.first();
+
+            if(!member) {
+              return message.reply("If that was me, you'd be dead.");
+            }
+
+            if(!member.bannable) {
+                return message.reply('ARE YOU KIDDING ME? WHO ARE YOU TRYING TO BAN?');
+            }
+
+            return member
+            .ban()
+            .then(() => {message.reply(`This is the part where die ${member.user}. YEEEEEEET!`);})
+            .catch(error => message.reply('Sorry, an error occured.'));
+        }
+    }
 
     if (message.content.toLowerCase().startsWith("!die")) {
         if(message.author.id !== shrekID && mods.has(message.author.id)) {
