@@ -31,6 +31,14 @@ module.exports = (client, message) => {
         }
     }
 
+    if (message.content.toLowerCase().startsWith("!yeet")) {
+        if(message.author.id !== shrekID && mods.has(message.author.id)) {
+            let messageArray = message.content.split(" ");
+            let name = messageArray[1];
+            message.channel.send("Are you sure you would like to yeet " + name + "?");
+        }
+    }
+
     if (message.content.toLowerCase().match(/ forgive /g)) {
         if(message.author.id !== shrekID) {
             message.channel.send("Oh yeah, you're right, " + `<@${message.author.id}>` + ". I forgive you... For stabbing me in the back!");
