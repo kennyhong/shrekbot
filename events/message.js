@@ -106,7 +106,7 @@ module.exports = (client, message) => {
 
             return member
             .ban()
-            .then(() => {message.reply(`This is the part where die ${member.user}. YEEEEEEET!`);})
+            .then(() => {message.reply(`This is the part where you die ${member.user}. YEEEEEEET!`);})
             .catch(error => message.reply('Sorry, an error occured.'));
         }
     }
