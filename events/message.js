@@ -58,6 +58,13 @@ module.exports = (client, message) => {
             message.delete();
         }
     }
+    
+    if(message.content.toLowerCase().startsWith("!podcast")) {
+        if(message.author.id !== shrekID) {
+            message.channel.send("Get yer listeners and check out Spec's new podcast! You can listen to it here: <https://bit.ly/2ZHvtuw> or <https://spoti.fi/2MII0tV>");
+            message.delete();
+        }
+    }
 
     if(message.content.toLowerCase().startsWith("!socials")) {
         if(message.author.id !== shrekID) {
