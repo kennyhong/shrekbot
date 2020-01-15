@@ -50,7 +50,7 @@ module.exports = (client, message) => {
     
     if(message.content.toLowerCase().startsWith("!gfuel")) {
         if(message.author.id !== shrekID) {
-            message.channel.send("Get yer daily dose of caffeine from <https://gfuel.com>, use the code \'Spectissa\' at checkout for 30% off your order!");
+            message.channel.send("Get yer daily dose of caffeine from <https://gfuel.com>, use the code \'Spectissa\' at checkout for 10% off your order!");
             message.delete();
         }
     }
