@@ -1,7 +1,7 @@
 module.exports = (client, message) => {
     const shrekID = client.user.id;
 
-    const mods = new Set(["176099227020165120", "131949489438064641", "396955938159984641", "173638066915901440", "123565612785074176", "337030050824060931"]);
+    const mods = new Set(["176099227020165120", "131949489438064641", "396955938159984641", "173638066915901440", "123565612785074176", "337030050824060931","408804501177368586"]);
     const slurs = ["nigger", "nigga", "niglet", "nignog", "faggot", "fag", "chink", "n*gg"]; // Sorry quick and dirty way to build a dict
 
     if(message.author.id !== shrekID) {
