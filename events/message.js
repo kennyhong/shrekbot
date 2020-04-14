@@ -172,13 +172,6 @@ module.exports = (client, message) => {
         }
     }
 
-    if (message.content.toLowerCase().startsWith("!encounterdnd")) {
-        if(message.author.id !== shrekID && mods.has(message.author.id)) {
-            message.channel.send("@everyone Learn DnD with our Guild Leader Spec! Dice giveaways available! https://www.twitch.tv/encounterroleplay");
-            message.delete();
-        }
-    }
-
     if (message.content.toLowerCase().startsWith("!hello")) {
         if(message.author.id !== shrekID && mods.has(message.author.id)) {
             message.channel.send("Oh Hello There! http://paperlief.com/images/shrek-wallpaper-2.jpg");
