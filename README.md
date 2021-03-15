@@ -12,9 +12,17 @@ List of current commands:
 - !d10
 - !d20
 - !d100
+- !live -> Live message
 - !approve -> Sends picture with thumbs up
+- !warning -> Shrekbot warning
 - !redflag -> GIF of a red flag being thrown
-- !yeet -> Doesn't do anything just a fun response
+- !redflagreverse -> GIF of putting red flag away
+- !yeet <USER> -> Doesn't do anything just a fun response
 - !tea -> SpecSip
 - !gfuel -> ad for gfuel
+- !podcast
+- !socials
+- !die -> specstab emotes
+- !ban / !kill <User> -> Ban a user (MUST BE ADMIN)
+- !purgeshrekbot2k -> cleans channel of all shrekbot messages
 ```

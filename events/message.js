@@ -128,13 +128,6 @@ module.exports = (client, message, member) => {
             message.channel.send(`Onions have layers. Ogres have layers.`);
         }
     }
-    
-    if (message.content.toLowerCase() === "!praiseme") {
-        if(message.author.id !== shrekID && message.member.roles.has(modRole)) {
-            message.channel.send("Also thank you @jlrogers56 for praising me, good luck shall be bestowed upon you tomorrow.");
-            message.delete();
-        }
-    }
 
     if (message.content.toLowerCase() === "!warning") {
         if(message.author.id !== shrekID && message.member.roles.has(modRole)) {
