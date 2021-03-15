@@ -28,7 +28,7 @@ module.exports = (client, message, member) => {
         }
     }
 
-    if (message.content.toLowerCase() === "!yeet") {
+    if (message.content.toLowerCase().startsWith("!yeet")) {
         if(message.author.id !== shrekID && message.member.roles.has(modRole)) {
             let messageArray = message.content.split(" ");
             let name = messageArray[1];
@@ -77,7 +77,7 @@ module.exports = (client, message, member) => {
         }
     }
 
-    if(message.content.toLowerCase() === "!ban") {
+    if(message.content.toLowerCase().startsWith("!ban")) {
         if(message.author.id !== shrekID && message.member.roles.has(modRole)) {
             const member = message.mentions.members.first();
 
@@ -96,7 +96,7 @@ module.exports = (client, message, member) => {
         }
     }
     
-        if(message.content.toLowerCase() === "!kill") {
+        if(message.content.toLowerCase().startsWith("!kill")) {
         if(message.author.id !== shrekID && message.member.roles.has(modRole)) {
             const member = message.mentions.members.first();
 
