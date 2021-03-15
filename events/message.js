@@ -1,7 +1,16 @@
-module.exports = (client, message) => {
+module.exports = (client, message, member) => {
     const shrekID = client.user.id;
 
-    const mods = new Set(["176099227020165120", "131949489438064641", "396955938159984641", "173638066915901440", "123565612785074176", "337030050824060931","408804501177368586"]);
+    const mods = new Set([
+        "176099227020165120",
+        "396955938159984641",
+        "173638066915901440",
+        "123565612785074176",
+        "337030050824060931",
+        "408804501177368586",
+        "360855818083500032",
+        "190670513306206209"]);
+    const rpRoles = new Set(["788162499639509003"]);
     const slurs = ["nigger", "nigga", "niglet", "nignog", "faggot", "fag", "chink", "n*gg"]; // Sorry quick and dirty way to build a dict
 
     if(message.author.id !== shrekID) {
@@ -156,22 +165,6 @@ module.exports = (client, message) => {
         }
     }
 
-    if (message.content.toLowerCase().startsWith("!d20")) {
-        if(message.author.id !== shrekID && mods.has(message.author.id)) {
-            var dice = Math.floor((Math.random() * 20) + 1);
-            if (dice === 1) {
-                message.channel.send("This is the part where you run away... I have rolled a " + dice + "!");
-            } else if (dice === 20) {
-                message.channel.send("I rolled a " + dice + ", do you think he's maybe compensating for something?")
-            } else if (dice < 20 && dice > 9) {
-                message.channel.send("I have rolled a " + dice + ". That'll do, Donkey. That'll do.");
-            } else {
-                message.channel.send("I have rolled a " + dice + ". Go away.");
-            }
-            message.delete();
-        }
-    }
-
     if (message.content.toLowerCase().startsWith("!hello")) {
         if(message.author.id !== shrekID && mods.has(message.author.id)) {
             message.channel.send("Oh Hello There! http://paperlief.com/images/shrek-wallpaper-2.jpg");
@@ -195,6 +188,40 @@ module.exports = (client, message) => {
     if (message.content.toLowerCase().startsWith("!live")) {
         if(message.author.id !== shrekID && mods.has(message.author.id)) {
             message.channel.send("@everyone THE PRINCESS IS LIVE! EVERYONE GATHER ROUND! [!gfuel, !comms] https://www.twitch.tv/spectissa");
+            message.delete();
+        }
+    }
+
+    // Dice Functions
+    
+    if (message.content.toLowerCase().startsWith("!d20mod")) {
+        if(message.author.id !== shrekID && mods.has(message.author.id)) {
+            var dice = Math.floor((Math.random() * 20) + 1);
+            if (dice === 1) {
+                message.channel.send("This is the part where you run away... I have rolled a " + dice + "!");
+            } else if (dice === 20) {
+                message.channel.send("I rolled a " + dice + ", do you think he's maybe compensating for something?")
+            } else if (dice < 20 && dice > 9) {
+                message.channel.send("I have rolled a " + dice + ". That'll do, Donkey. That'll do.");
+            } else {
+                message.channel.send("I have rolled a " + dice + ". Go away.");
+            }
+            message.delete();
+        }
+    }
+
+    if (message.content.toLowerCase().startsWith("!d20")) {
+        var isValid = false
+        isValid = mods.has(message.author.id) || member.roles.cache.has('788162499639509003');
+        if(message.author.id !== shrekID && isValid) {
+            var dice = Math.floor((Math.random() * 20) + 1);
+            if (dice === 1) {
+                message.channel.send("Aww too bad you rolled a " + dice + "!");
+            } else if (dice === 20) {
+                message.channel.send("CRIT! You rolled a " + dice + "!")
+            } else {
+                message.channel.send("You have rolled a " + dice + "!");
+            }
             message.delete();
         }
     }
