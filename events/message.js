@@ -212,7 +212,7 @@ module.exports = (client, message, member) => {
 
     if (message.content.toLowerCase().startsWith("!d20")) {
         var isValid = false
-        isValid = mods.has(message.author.id) || member.roles.cache.has('788162499639509003');
+        isValid = mods.has(message.author.id) || message.member.roles.cache.has('788162499639509003');
         if(message.author.id !== shrekID && isValid) {
             var dice = Math.floor((Math.random() * 20) + 1);
             if (dice === 1) {
