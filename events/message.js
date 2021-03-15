@@ -208,13 +208,57 @@ module.exports = (client, message, member) => {
         if(message.author.id !== shrekID && isValid) {
             var dice = Math.floor((Math.random() * 20) + 1);
             if (dice === 1) {
-                message.channel.send("Aww too bad you rolled a " + dice + "!");
+                message.channel.send("D20: Aww too bad you rolled a " + dice + "!");
             } else if (dice === 20) {
-                message.channel.send("CRIT! You rolled a " + dice + "!")
+                message.channel.send("D20: CRIT! You rolled a " + dice + "!")
             } else {
-                message.channel.send("You have rolled a " + dice + "!");
+                message.channel.send("D20: You have rolled a " + dice + "!");
             }
-            message.delete();
+        }
+    }
+
+    if (message.content.toLowerCase().startsWith("!d4")) {
+        var isValid = false
+        isValid = message.member.roles.has(modRole) || message.member.roles.has(rpRole);
+        if(message.author.id !== shrekID && isValid) {
+            var dice = Math.floor((Math.random() * 4) + 1);
+            message.channel.send("D4: You have rolled a " + dice + "!");
+        }
+    }
+
+    if (message.content.toLowerCase().startsWith("!d6")) {
+        var isValid = false
+        isValid = message.member.roles.has(modRole) || message.member.roles.has(rpRole);
+        if(message.author.id !== shrekID && isValid) {
+            var dice = Math.floor((Math.random() * 6) + 1);
+            message.channel.send("D6: You have rolled a " + dice + "!");
+        }
+    }
+
+    if (message.content.toLowerCase().startsWith("!d8")) {
+        var isValid = false
+        isValid = message.member.roles.has(modRole) || message.member.roles.has(rpRole);
+        if(message.author.id !== shrekID && isValid) {
+            var dice = Math.floor((Math.random() * 8) + 1);
+            message.channel.send("D8: You have rolled a " + dice + "!");
+        }
+    }
+
+    if (message.content.toLowerCase().startsWith("!d10")) {
+        var isValid = false
+        isValid = message.member.roles.has(modRole) || message.member.roles.has(rpRole);
+        if(message.author.id !== shrekID && isValid) {
+            var dice = Math.floor((Math.random() * 10) + 1);
+            message.channel.send("D10: You have rolled a " + dice + "!");
+        }
+    }
+
+    if (message.content.toLowerCase().startsWith("!d100")) {
+        var isValid = false
+        isValid = message.member.roles.has(modRole) || message.member.roles.has(rpRole);
+        if(message.author.id !== shrekID && isValid) {
+            var dice = Math.floor((Math.random() * 100) + 1);
+            message.channel.send("D100: You have rolled a " + dice + "!");
         }
     }
 } //end
