@@ -244,7 +244,7 @@ module.exports = (client, message, member) => {
         }
     }
 
-    if (message.content.toLowerCase().startsWith("!d10")) {
+    if (message.content.toLowerCase().match("!d10")) {
         var isValid = false
         isValid = message.member.roles.has(modRole) || message.member.roles.has(rpRole);
         if(message.author.id !== shrekID && isValid) {
