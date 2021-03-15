@@ -1,16 +1,8 @@
 module.exports = (client, message, member) => {
     const shrekID = client.user.id;
 
-    const mods = new Set([
-        "176099227020165120",
-        "396955938159984641",
-        "173638066915901440",
-        "123565612785074176",
-        "337030050824060931",
-        "408804501177368586",
-        "360855818083500032",
-        "190670513306206209"]);
-    const rpRoles = new Set(["788162499639509003"]);
+    const modRole = "437492398193377281"
+    const rpRole = "788162499639509003";
     const slurs = ["nigger", "nigga", "niglet", "nignog", "faggot", "fag", "chink", "n*gg"]; // Sorry quick and dirty way to build a dict
 
     if(message.author.id !== shrekID) {
@@ -30,14 +22,14 @@ module.exports = (client, message, member) => {
     }
     
     if (message.content.toLowerCase().startsWith("!approve")) {
-        if(message.author.id !== shrekID && mods.has(message.author.id)) {
+        if(message.author.id !== shrekID && message.member.roles.has(modRole)) {
             message.channel.send("https://www.pngkey.com/png/full/14-142920_shrek-shrek-with-thumbs-up.png");
             message.delete();
         }
     }
 
     if (message.content.toLowerCase().startsWith("!yeet")) {
-        if(message.author.id !== shrekID && mods.has(message.author.id)) {
+        if(message.author.id !== shrekID && message.member.roles.has(modRole)) {
             let messageArray = message.content.split(" ");
             let name = messageArray[1];
             message.channel.send("Are you sure you would like to yeet " + name + "?");
@@ -86,7 +78,7 @@ module.exports = (client, message, member) => {
     }
 
     if(message.content.toLowerCase().startsWith("!ban")) {
-        if(message.author.id !== shrekID && mods.has(message.author.id)) {
+        if(message.author.id !== shrekID && message.member.roles.has(modRole)) {
             const member = message.mentions.members.first();
 
             if(!member) {
@@ -105,7 +97,7 @@ module.exports = (client, message, member) => {
     }
     
         if(message.content.toLowerCase().startsWith("!kill")) {
-        if(message.author.id !== shrekID && mods.has(message.author.id)) {
+        if(message.author.id !== shrekID && message.member.roles.has(modRole)) {
             const member = message.mentions.members.first();
 
             if(!member) {
@@ -124,7 +116,7 @@ module.exports = (client, message, member) => {
     }
 
     if (message.content.toLowerCase().startsWith("!die")) {
-        if(message.author.id !== shrekID && mods.has(message.author.id)) {
+        if(message.author.id !== shrekID && message.member.roles.has(modRole)) {
             const specstab = client.emojis.find(emoji => emoji.name === 'SpecStab');
             message.channel.send(`${specstab} ${specstab} ${specstab} ${specstab} ${specstab}`);
             message.delete();
@@ -138,55 +130,55 @@ module.exports = (client, message, member) => {
     }
     
     if (message.content.toLowerCase().startsWith("!praiseme")) {
-        if(message.author.id !== shrekID && mods.has(message.author.id)) {
+        if(message.author.id !== shrekID && message.member.roles.has(modRole)) {
             message.channel.send("Also thank you @jlrogers56 for praising me, good luck shall be bestowed upon you tomorrow.");
             message.delete();
         }
     }
 
     if (message.content.toLowerCase().startsWith("!warning")) {
-        if(message.author.id !== shrekID && mods.has(message.author.id)) {
+        if(message.author.id !== shrekID && message.member.roles.has(modRole)) {
             message.channel.send("Tread these swamps lightly boi...\nhttps://media2.giphy.com/media/3o72Fiu6B2vBEwZnIA/giphy.gif");
             message.delete();
         }
     }
 
     if (message.content.toLowerCase().startsWith("!redflag")) {
-        if(message.author.id !== shrekID && mods.has(message.author.id)) {
+        if(message.author.id !== shrekID && message.member.roles.has(modRole)) {
             message.channel.send("If that was me, you'd be dead.\nhttps://media2.giphy.com/media/wbSVRrU43Uopy/giphy.gif");
             message.delete();
         }
     }
 
     if (message.content.toLowerCase().startsWith("!redflagreverse")) {
-        if(message.author.id !== shrekID && mods.has(message.author.id)) {
+        if(message.author.id !== shrekID && message.member.roles.has(modRole)) {
             message.channel.send("My mistake I'm sorry!\nhttps://media2.giphy.com/media/gT2TJu2paz4r9eIVtN/giphy.gif");
             message.delete();
         }
     }
 
     if (message.content.toLowerCase().startsWith("!hello")) {
-        if(message.author.id !== shrekID && mods.has(message.author.id)) {
+        if(message.author.id !== shrekID && message.member.roles.has(modRole)) {
             message.channel.send("Oh Hello There! http://paperlief.com/images/shrek-wallpaper-2.jpg");
             message.delete();
         }
     }
 
     if (message.content.toLowerCase().startsWith("!purgeshrekbot2k")) {
-        if(message.author.id !== shrekID && mods.has(message.author.id)) {
+        if(message.author.id !== shrekID && message.member.roles.has(modRole)) {
             message.channel.fetchMessages()
             .then(messages => messages.filter(m => m.author.id === shrekID).forEach(message => message.delete()));
         }
     }
     
     if (message.content.toLowerCase().startsWith("!developer")) {
-        if(message.author.id !== shrekID && mods.has(message.author.id)) {
+        if(message.author.id !== shrekID && message.member.roles.has(modRole)) {
             message.channel.send("You can check out how I work here: https://github.com/kennyhong/shrekbot");
         }
     }
     
     if (message.content.toLowerCase().startsWith("!live")) {
-        if(message.author.id !== shrekID && mods.has(message.author.id)) {
+        if(message.author.id !== shrekID && message.member.roles.has(modRole)) {
             message.channel.send("@everyone THE PRINCESS IS LIVE! EVERYONE GATHER ROUND! [!gfuel, !comms] https://www.twitch.tv/spectissa");
             message.delete();
         }
@@ -195,7 +187,7 @@ module.exports = (client, message, member) => {
     // Dice Functions
     
     if (message.content.toLowerCase().startsWith("!d20mod")) {
-        if(message.author.id !== shrekID && mods.has(message.author.id)) {
+        if(message.author.id !== shrekID && message.member.roles.has(modRole)) {
             var dice = Math.floor((Math.random() * 20) + 1);
             if (dice === 1) {
                 message.channel.send("This is the part where you run away... I have rolled a " + dice + "!");
@@ -212,7 +204,7 @@ module.exports = (client, message, member) => {
 
     if (message.content.toLowerCase().startsWith("!d20")) {
         var isValid = false
-        isValid = mods.has(message.author.id) || message.member.roles.has('788162499639509003');
+        isValid = message.member.roles.has(modRole) || message.member.roles.has(rpRole);
         if(message.author.id !== shrekID && isValid) {
             var dice = Math.floor((Math.random() * 20) + 1);
             if (dice === 1) {
