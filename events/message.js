@@ -21,14 +21,14 @@ module.exports = (client, message, member) => {
         message.channel.send(`Huh? WHAT ARE YOU DOING IN MY SWAMP?!`);
     }
     
-    if (message.content.toLowerCase().startsWith("!approve")) {
+    if (message.content.toLowerCase() === "!approve") {
         if(message.author.id !== shrekID && message.member.roles.has(modRole)) {
             message.channel.send("https://www.pngkey.com/png/full/14-142920_shrek-shrek-with-thumbs-up.png");
             message.delete();
         }
     }
 
-    if (message.content.toLowerCase().startsWith("!yeet")) {
+    if (message.content.toLowerCase() === "!yeet") {
         if(message.author.id !== shrekID && message.member.roles.has(modRole)) {
             let messageArray = message.content.split(" ");
             let name = messageArray[1];
@@ -42,28 +42,28 @@ module.exports = (client, message, member) => {
         }
     }
 
-    if (message.content.toLowerCase().startsWith("!tea")) {
+    if (message.content.toLowerCase() === "!tea") {
         if(message.author.id !== shrekID) {
             const sip = client.emojis.find(emoji => emoji.name === 'SpecSip');
             message.channel.send(`${sip}`);
         }
     }
     
-    if(message.content.toLowerCase().startsWith("!gfuel")) {
+    if(message.content.toLowerCase() === "!gfuel") {
         if(message.author.id !== shrekID) {
             message.channel.send("Get yer daily dose of caffeine from <https://gfuel.com>, use the code \'Spectissa\' at checkout for 10% off your order!");
             message.delete();
         }
     }
     
-    if(message.content.toLowerCase().startsWith("!podcast")) {
+    if(message.content.toLowerCase() === "!podcast") {
         if(message.author.id !== shrekID) {
             message.channel.send("Get yer listeners and check out Spec's new podcast! You can listen to it here: <https://bit.ly/2ZHvtuw> or <https://spoti.fi/2MII0tV>");
             message.delete();
         }
     }
 
-    if(message.content.toLowerCase().startsWith("!socials")) {
+    if(message.content.toLowerCase() === "!socials") {
         if(message.author.id !== shrekID) {
             message.channel.send("Stay connected with the elven rogue sheself!:\nInsta : <https://www.instagram.com/spectissa_>\nTwitter: <https://twitter.com/spectissa>\nYoutube: <https://www.youtube.com/spectissa>");
             message.delete();
@@ -77,7 +77,7 @@ module.exports = (client, message, member) => {
         }
     }
 
-    if(message.content.toLowerCase().startsWith("!ban")) {
+    if(message.content.toLowerCase() === "!ban") {
         if(message.author.id !== shrekID && message.member.roles.has(modRole)) {
             const member = message.mentions.members.first();
 
@@ -96,7 +96,7 @@ module.exports = (client, message, member) => {
         }
     }
     
-        if(message.content.toLowerCase().startsWith("!kill")) {
+        if(message.content.toLowerCase() === "!kill") {
         if(message.author.id !== shrekID && message.member.roles.has(modRole)) {
             const member = message.mentions.members.first();
 
@@ -115,7 +115,7 @@ module.exports = (client, message, member) => {
         }
     }
 
-    if (message.content.toLowerCase().startsWith("!die")) {
+    if (message.content.toLowerCase() === "!die") {
         if(message.author.id !== shrekID && message.member.roles.has(modRole)) {
             const specstab = client.emojis.find(emoji => emoji.name === 'SpecStab');
             message.channel.send(`${specstab} ${specstab} ${specstab} ${specstab} ${specstab}`);
@@ -129,55 +129,48 @@ module.exports = (client, message, member) => {
         }
     }
     
-    if (message.content.toLowerCase().startsWith("!praiseme")) {
+    if (message.content.toLowerCase() === "!praiseme") {
         if(message.author.id !== shrekID && message.member.roles.has(modRole)) {
             message.channel.send("Also thank you @jlrogers56 for praising me, good luck shall be bestowed upon you tomorrow.");
             message.delete();
         }
     }
 
-    if (message.content.toLowerCase().startsWith("!warning")) {
+    if (message.content.toLowerCase() === "!warning") {
         if(message.author.id !== shrekID && message.member.roles.has(modRole)) {
             message.channel.send("Tread these swamps lightly boi...\nhttps://media2.giphy.com/media/3o72Fiu6B2vBEwZnIA/giphy.gif");
             message.delete();
         }
     }
 
-    if (message.content.toLowerCase().startsWith("!redflag")) {
+    if (message.content.toLowerCase() === "!redflag") {
         if(message.author.id !== shrekID && message.member.roles.has(modRole)) {
             message.channel.send("If that was me, you'd be dead.\nhttps://media2.giphy.com/media/wbSVRrU43Uopy/giphy.gif");
             message.delete();
         }
     }
 
-    if (message.content.toLowerCase().startsWith("!redflagreverse")) {
+    if (message.content.toLowerCase() === "!redflagreverse") {
         if(message.author.id !== shrekID && message.member.roles.has(modRole)) {
             message.channel.send("My mistake I'm sorry!\nhttps://media2.giphy.com/media/gT2TJu2paz4r9eIVtN/giphy.gif");
             message.delete();
         }
     }
 
-    if (message.content.toLowerCase().startsWith("!hello")) {
-        if(message.author.id !== shrekID && message.member.roles.has(modRole)) {
-            message.channel.send("Oh Hello There! http://paperlief.com/images/shrek-wallpaper-2.jpg");
-            message.delete();
-        }
-    }
-
-    if (message.content.toLowerCase().startsWith("!purgeshrekbot2k")) {
+    if (message.content.toLowerCase() === "!purgeshrekbot2k") {
         if(message.author.id !== shrekID && message.member.roles.has(modRole)) {
             message.channel.fetchMessages()
             .then(messages => messages.filter(m => m.author.id === shrekID).forEach(message => message.delete()));
         }
     }
     
-    if (message.content.toLowerCase().startsWith("!developer")) {
+    if (message.content.toLowerCase() === "!developer") {
         if(message.author.id !== shrekID && message.member.roles.has(modRole)) {
             message.channel.send("You can check out how I work here: https://github.com/kennyhong/shrekbot");
         }
     }
     
-    if (message.content.toLowerCase().startsWith("!live")) {
+    if (message.content.toLowerCase() === "!live") {
         if(message.author.id !== shrekID && message.member.roles.has(modRole)) {
             message.channel.send("@everyone THE PRINCESS IS LIVE! EVERYONE GATHER ROUND! [!gfuel, !comms] https://www.twitch.tv/spectissa");
             message.delete();
@@ -186,7 +179,7 @@ module.exports = (client, message, member) => {
 
     // Dice Functions
     
-    if (message.content.toLowerCase().startsWith("!d20mod")) {
+    if (message.content.toLowerCase() === "!d20mod") {
         if(message.author.id !== shrekID && message.member.roles.has(modRole)) {
             var dice = Math.floor((Math.random() * 20) + 1);
             if (dice === 1) {
@@ -202,7 +195,7 @@ module.exports = (client, message, member) => {
         }
     }
 
-    if (message.content.toLowerCase().startsWith("!d20")) {
+    if (message.content.toLowerCase() === "!d20") {
         var isValid = false
         isValid = message.member.roles.has(modRole) || message.member.roles.has(rpRole);
         if(message.author.id !== shrekID && isValid) {
@@ -217,7 +210,7 @@ module.exports = (client, message, member) => {
         }
     }
 
-    if (message.content.toLowerCase().startsWith("!d4")) {
+    if (message.content.toLowerCase() === "!d4") {
         var isValid = false
         isValid = message.member.roles.has(modRole) || message.member.roles.has(rpRole);
         if(message.author.id !== shrekID && isValid) {
@@ -226,7 +219,7 @@ module.exports = (client, message, member) => {
         }
     }
 
-    if (message.content.toLowerCase().startsWith("!d6")) {
+    if (message.content.toLowerCase() === "!d6") {
         var isValid = false
         isValid = message.member.roles.has(modRole) || message.member.roles.has(rpRole);
         if(message.author.id !== shrekID && isValid) {
@@ -235,7 +228,7 @@ module.exports = (client, message, member) => {
         }
     }
 
-    if (message.content.toLowerCase().startsWith("!d8")) {
+    if (message.content.toLowerCase() === "!d8") {
         var isValid = false
         isValid = message.member.roles.has(modRole) || message.member.roles.has(rpRole);
         if(message.author.id !== shrekID && isValid) {
@@ -244,7 +237,7 @@ module.exports = (client, message, member) => {
         }
     }
 
-    if (message.content.toLowerCase().match("!d10")) {
+    if (message.content.toLowerCase() === "!d10") {
         var isValid = false
         isValid = message.member.roles.has(modRole) || message.member.roles.has(rpRole);
         if(message.author.id !== shrekID && isValid) {
@@ -253,7 +246,7 @@ module.exports = (client, message, member) => {
         }
     }
 
-    if (message.content.toLowerCase().startsWith("!d100")) {
+    if (message.content.toLowerCase() === "!d100") {
         var isValid = false
         isValid = message.member.roles.has(modRole) || message.member.roles.has(rpRole);
         if(message.author.id !== shrekID && isValid) {
