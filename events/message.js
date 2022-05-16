@@ -158,7 +158,7 @@ module.exports = (client, message, member) => {
     
     if (message.content.toLowerCase() === "!live") {
         if(message.author.id !== shrekID && message.member.roles.has(modRole)) {
-            message.channel.send("@everyone THE PRINCESS IS LIVE! EVERYONE GATHER ROUND! [!comms] https://www.twitch.tv/spectissa");
+            message.channel.send("@everyone THE PRINCESS IS LIVE! EVERYONE GATHER ROUND! [!comms, !links] https://www.twitch.tv/spectissa");
             message.delete();
         }
     }
