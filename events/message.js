@@ -48,14 +48,7 @@ module.exports = (client, message, member) => {
             message.channel.send(`${sip}`);
         }
     }
-    
-    if(message.content.toLowerCase() === "!gfuel") {
-        if(message.author.id !== shrekID) {
-            message.channel.send("Get yer daily dose of caffeine from <https://gfuel.com>, use the code \'Spectissa\' at checkout for 10% off your order!");
-            message.delete();
-        }
-    }
-    
+
     if(message.content.toLowerCase() === "!podcast") {
         if(message.author.id !== shrekID) {
             message.channel.send("Get yer listeners and check out Spec's new podcast! You can listen to it here: <https://bit.ly/2ZHvtuw> or <https://spoti.fi/2MII0tV>");
@@ -165,7 +158,7 @@ module.exports = (client, message, member) => {
     
     if (message.content.toLowerCase() === "!live") {
         if(message.author.id !== shrekID && message.member.roles.has(modRole)) {
-            message.channel.send("@everyone THE PRINCESS IS LIVE! EVERYONE GATHER ROUND! [!gfuel, !comms] https://www.twitch.tv/spectissa");
+            message.channel.send("@everyone THE PRINCESS IS LIVE! EVERYONE GATHER ROUND! [!comms] https://www.twitch.tv/spectissa");
             message.delete();
         }
     }
